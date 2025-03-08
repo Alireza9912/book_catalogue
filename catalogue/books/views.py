@@ -3,7 +3,7 @@ from .models import Book
 
 def home(request):
     Books = Book.objects.all()
-    return render(request, 'book_list.html')
+    return render(request, 'book_list.html',{'Books':Books})
 
 
 
