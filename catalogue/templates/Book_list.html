@@ -12,13 +12,15 @@
         {% for Book in Books %}
         <li>
             <h2>{{Book.title}}</h2>
-            <img src="{{ book.image1.url }}" alt="">
-            <img src="{{ book.image2.url }}" alt="">
-            <img src="{{ book.image3.url }}" alt="">
-            <p>{{ book.author }}</p>
-            <p>{{ book.description }}</p>
+            <img src="{{ Book.image1.url }}" alt="{{Book.image1}}">
+            <img src="{{ Book.image2.url }}" alt="{{Book.image2}}">
+            <img src="{{ Book.image3.url }}" alt="{{Book.image3}}">
+            <p>{{Book.author}}</p>
+            <p>{{Book.description}}</p>
         </li>
         {% endfor %}
     </ul>
+
+    <p></p>
 </body>
 </html>
