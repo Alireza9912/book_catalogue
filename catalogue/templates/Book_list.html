@@ -5,22 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="{% static "css/output-tailwind.css"  %}" rel="stylesheet">
 </head>
 <body>
-    <h1>Book catalogue</h1>
-    <ul>
-        {% for Book in Books %}
-        <li>
-            <h2>{{Book.title}}</h2>
-            <img src="{{ Book.image1.url }}" alt="{{Book.image1}}">
-            <img src="{{ Book.image2.url }}" alt="{{Book.image2}}">
-            <img src="{{ Book.image3.url }}" alt="{{Book.image3}}">
-            <p>{{Book.author}}</p>
-            <p>{{Book.description}}</p>
-        </li>
-        {% endfor %}
-    </ul>
+    <header class="w-full h-20 bg-blue-900">
+        <h1>Book catalogue</h1> 
+    </header>
+    
+    <div>
+        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+            {% for Book in Books %}
+            <li>
+                <h2 class="text-red-800">{{Book.title}}</h2>
+                <img src="{{ Book.image1.url }}" alt="{{Book.image1}}" class="w-72 h-96">
+                <img src="{{ Book.image2.url }}" alt="{{Book.image2}}" class="w-72 h-96">
+                <img src="{{ Book.image3.url }}" alt="{{Book.image3}}" class="w-72 h-96">
+                <p>{{Book.author}}</p>
+                <p>{{Book.description}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 
     <p></p>
+    <footer class="w-full h-20 bg-blue-900">
+
+    </footer>
 </body>
 </html>
